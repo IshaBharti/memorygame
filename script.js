@@ -8,10 +8,15 @@ let flips = 0;
 function win() {
     let matched = document.querySelectorAll(".matched");
     if (matched.length == 12) {
-        alert(
-            `Congratulations! You won you took ${min}:${sec} to complete the game.`
+        swal({
+            title: "Congratulations!",
+            text: ` You won you took ${min} min : ${sec} sec to complete the game.`,
+            icon: "success",
+            button: "Play Again!"
 
-        );
+        }).then(function() {
+            window.location = "/Day_10/index.html";
+        });;
     }
 }
 
